@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #121212;
+    color: white;
+}
+
+header {
+    padding: 20px;
+    background: #181818;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+header h1 {
+    margin-right: auto;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+nav {
+    padding: 15px;
+    background: #222;
+}
+
+nav a {
+    margin-right: 25px;
+}
+
+main {
+    padding: 30px;
+}
+
+.songs {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.song, .playlist div {
+    background: #1f1f1f;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 12px;
+    width: 180px;
+}
+
+.cover {
+    height: 120px;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 18px;
+    background: #181818;
+    text-align: center;
+}
+
+.login {
+    width: 300px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.login input {
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+}

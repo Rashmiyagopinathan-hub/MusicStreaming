@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Playlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🎵 Music Hub</h1>
+    <a href="index.html">Home</a>
+</header>
+
+<main>
+    <h2>❤️ My Playlist</h2>
+
+    <div class="playlist">
+        <div>
+            <h3>🎧 My Favorites</h3>
+            <p>Perfect - Ed Sheeran</p>
+            <button onclick="playSong('Perfect')">▶ Play</button>
+        </div>
+
+        <div>
+            <h3>🔥 Workout Songs</h3>
+            <p>Believer - Imagine Dragons</p>
+            <button onclick="playSong('Believer')">▶ Play</button>
+        </div>
+
+        <div>
+            <h3>📚 Study Songs</h3>
+            <p>Heat Waves - Glass Animals</p>
+            <button onclick="playSong('Heat Waves')">▶ Play</button>
+        </div>
+    </div>
+
+    <h2>➕ Create Playlist</h2>
+
+    <input type="text" id="playlistName"
+           placeholder="Playlist name">
+
+    <button onclick="createPlaylist()">
+        Create
+    </button>
+</main>
+
+<footer id="player">No song playing</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

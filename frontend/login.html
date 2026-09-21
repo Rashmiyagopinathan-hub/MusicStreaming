@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Music Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login">
+    <h1>🎵 Music Hub</h1>
+    <h2>Login</h2>
+
+    <form onsubmit="login(event)">
+        <label>Email</label>
+        <input type="email" id="email" required>
+
+        <label>Password</label>
+        <input type="password" id="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account?</p>
+    <button onclick="register()">Create Account</button>
+
+    <br><br>
+
+    <a href="index.html">← Back to Home</a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

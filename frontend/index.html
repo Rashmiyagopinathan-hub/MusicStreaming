@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🎵 Music Hub</h1>
+    <input type="text" id="search" placeholder="Search songs">
+    <a href="login.html">Login</a>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="playlist.html">My Playlist</a>
+</nav>
+
+<main>
+    <h2>🎧 Discover Music</h2>
+
+    <div class="songs">
+        <div class="song">
+            <div class="cover">🎵</div>
+            <h3>Perfect</h3>
+            <p>Ed Sheeran</p>
+            <button onclick="playSong('Perfect')">▶ Play</button>
+        </div>
+
+        <div class="song">
+            <div class="cover">🎶</div>
+            <h3>Believer</h3>
+            <p>Imagine Dragons</p>
+            <button onclick="playSong('Believer')">▶ Play</button>
+        </div>
+
+        <div class="song">
+            <div class="cover">🎼</div>
+            <h3>Heat Waves</h3>
+            <p>Glass Animals</p>
+            <button onclick="playSong('Heat Waves')">▶ Play</button>
+        </div>
+    </div>
+
+    <h2>🤖 Recommended For You</h2>
+    <p>Based on your listening history</p>
+</main>
+
+<footer id="player">No song playing</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

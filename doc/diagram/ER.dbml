@@ -1,0 +1,62 @@
+Table users {
+  user_id int [pk, increment]
+  name varchar(100)
+  email varchar(150) [unique]
+  password varchar(255)
+  role varchar(30)
+  created_at datetime
+}
+
+Table songs {
+  song_id int [pk, increment]
+  title varchar(150)
+  artist varchar(100)
+  album varchar(100)
+  genre varchar(50)
+  language varchar(50)
+  duration int
+  audio_url varchar(255)
+  cover_url varchar(255)
+  created_at datetime
+}
+
+Table playlists {
+  playlist_id int [pk, increment]
+  user_id int
+  playlist_name varchar(100)
+  description varchar(255)
+  created_at datetime
+}
+
+Table playlist_songs {
+  playlist_song_id int [pk, increment]
+  playlist_id int
+  song_id int
+  added_at datetime
+}
+
+Table listening_history {
+  history_id int [pk, increment]
+  user_id int
+  song_id int
+  played_at datetime
+  duration_played int
+}
+
+Table likes {
+  like_id int [pk, increment]
+  user_id int
+  song_id int
+  liked_at datetime
+}
+
+Ref: playlists.user_id > users.user_id
+
+Ref: playlist_songs.playlist_id > playlists.playlist_id
+Ref: playlist_songs.song_id > songs.song_id
+
+Ref: listening_history.user_id > users.user_id
+Ref: listening_history.song_id > songs.song_id
+
+Ref: likes.user_id > users.user_id
+Ref: likes.song_id > songs.song_id
