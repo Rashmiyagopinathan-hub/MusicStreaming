@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Hub - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="home-container">
+
+        <h1>🎵 Music Hub</h1>
+
+        <h2>Available Songs</h2>
+
+        <div id="songList">
+            Loading songs...
+        </div>
+
+    </div>
+
+    <script>
+
+        fetch("http://localhost:8081/songs")
+            .then(response => response.json())
+            .then(songs => {
+
+                let songList = document.getElementById("songList");
+
+                songList.innerHTML = "";
+
+                if (songs.length === 0) {
+                    songList.innerHTML = "<p>No songs available.</p>";
+                    return;
+                }
+
+                songs.forEach(song => {
+
+                    let songBox = document.createElement("div");
+
+                    songBox.className = "song-box";
+
+                    songBox.innerHTML = `
+                        <h3>🎵 ${song.title}</h3>
+                        <p>Genre: ${song.genre}</p>
+                        <p>Duration: ${song.duration}</p>
+                        <button onclick="likeSong(${song.id})">
+                            ❤️ Like
+                        </button>
+                    `;
+
+                    songList.appendChild(songBox);
+
+                });
+
+            })
+            .catch(error => {
+
+                document.getElementById("songList").innerHTML =
+                    "<p>❌ Backend is not running.</p>";
+
+                console.log(error);
+
+            });
+
+
+        function likeSong(songId) {
+
+            fetch("http://localhost:8081/likes", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    userId: 1,
+                    songId: songId
+                })
+
+            })
+            .then(response => response.json())
+            .then(data => {
+
+                alert("❤️ Song liked successfully!");
+
+            })
+            .catch(error => {
+
+                alert("❌ Unable to like song.");
+
+                console.log(error);
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
