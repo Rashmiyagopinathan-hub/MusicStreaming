@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.musicstreaming.model.Like;
 import com.musicstreaming.service.LikeService;
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/likes")
 public class LikeController {

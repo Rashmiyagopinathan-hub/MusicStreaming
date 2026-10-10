@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.musicstreaming.model.Song;
 import com.musicstreaming.service.SongService;
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/songs")
 public class SongController {
